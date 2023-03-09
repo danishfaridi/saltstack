@@ -1,4 +1,4 @@
-user_danfar:
+dev_user_danfar:
   user.present:
     - name: danfar 
     - fullname: dan far

@@ -1,6 +1,5 @@
 base:
   '*':
-
-  'web*':
-   - apache
-   - users.init
+  'minion-1':
+    - apache
+    - users.init

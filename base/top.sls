@@ -1,4 +1,5 @@
 base:
   '*':
-    - apache.init
     - users.init
+  'minion-1'
+    - apache.init

@@ -1,3 +1,3 @@
 dev:
   '*':
-   - users.init
+   - users.initcat conf

@@ -9,7 +9,7 @@ dev_user_danfar:
     - group:
       - wheel
 
-key_danfar:
+dev_key_danfar:
   ssh_auth.present:
     - name: danfar
     - user: danfar

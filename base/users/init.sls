@@ -1,16 +1,16 @@
-user_danfar:
+{% for user, data in pillar.get('admin_users',{}).items() %}
+user_{{ user }}:
   user.present:
-    - name: danfar 
-    - fullname: dan far
-    - shell: /bin/bash
-    - home: /home/danfar
-    - uid: 10000
-    - gid_from_name: True
-    - group:
-      - wheel
+    - name: {{ data['user'] }}
+    - fullname: {{ data['fullname'] }}
+    - shell: {{ data['shell'] }}
+    - home: {{ data['home'] }}
+    - uid: {{ data['uid'] }}
+    - gid_from_name: {{ data['gid_from_name'] }}
+    - groups: {{ data['groups'] }}
+    - ssh_key: {{ data['ssh_key'] }}
 
-key_danfar:
+{{ user}}_key:
   ssh_auth.present:
-    - name: danfar
-    - user: danfar
-    - source: salt://root/.ssh/danfar.pub
+    - name: {{ data['ssh_key'] }}
+    - user: {{ user }}

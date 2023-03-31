@@ -1,7 +1,7 @@
 {% for user, data in pillar.get('admin_users',{}).items() %}
 user_{{ user }}:
   user.present:
-    - name: {{ data['user'] }}
+   # - name: {{ data['user'] }}
     - fullname: {{ data['fullname'] }}
     - shell: {{ data['shell'] }}
     - home: {{ data['home'] }}

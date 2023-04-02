@@ -10,9 +10,4 @@ user_{{ user }}:
     - groups: {{ data['groups'] }}
     - ssh_key: {{ data['ssh_key'] }}
 
-{{ user }}_key:
-  ssh_auth.present:
-    - name: {{ data['ssh_key'] }}
-    - user: {{ user }}
-
 {% endfor %}}

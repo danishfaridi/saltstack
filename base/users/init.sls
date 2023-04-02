@@ -1,4 +1,4 @@
-{% for user, data in pillar.get('admin_users',{}).items() %}
+{% for user, data in pillar.get('admin_users', {}).items() %}
 user_{{ user }}:
   user.present:
     - name: {{ user }}
@@ -10,7 +10,7 @@ user_{{ user }}:
     - groups: {{ data['groups'] }}
     - ssh_key: {{ data['ssh_key'] }}
 
-{{ user}}_key:
+{{ user }}_key:
   ssh_auth.present:
     - name: {{ data['ssh_key'] }}
     - user: {{ user }}
